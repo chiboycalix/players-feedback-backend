@@ -1,0 +1,11 @@
+{
+  "name": "players-feedback-backend",
+  "version": "1.0.0",
+  "description": "Players feedback application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igwe Chinonso",
+  "license": "ISC"
+}
