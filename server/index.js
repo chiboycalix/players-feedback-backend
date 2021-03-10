@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import express from 'express';
 import routes from './routes';
 import { connect } from './database/connection'
