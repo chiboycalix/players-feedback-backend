@@ -36,5 +36,8 @@
     "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=0.12"
   }
 }
