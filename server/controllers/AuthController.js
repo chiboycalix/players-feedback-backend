@@ -2,10 +2,11 @@ class AuthController {
 
   static async SignUp(req, res) {
 
-    console.log(req)
-    console.log('hi')
+    const { username, email, password, avatar } = req.body;
 
-    return;
+    console.log(username, email, password)
+
+    res.send({ username, email, password, avatar })
   }
 }
 
