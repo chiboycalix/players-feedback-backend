@@ -21,5 +21,5 @@ export const client = new pg.Client({
   database: "pfdb",
   port: 5432,
   host: "localhost",
-  // ssl: true
+  ssl: true
 });
