@@ -2,7 +2,7 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import express from 'express';
 import routes from './routes';
-import { client } from './database/connection'
+import sequelize from './database/connection'
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -16,7 +16,7 @@ app.listen(PORT, () => {
 })
 
 try {
-  client.connect()
+  sequelize()
 } catch (error) {
 
 }
