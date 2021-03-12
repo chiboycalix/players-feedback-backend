@@ -25,11 +25,11 @@ import pg from 'pg'
 // });
 
 let cloud_config = {
-  username: process.env.DB_USERNAME,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOSTNAME,
-  port: 5432,
+  username: process.env.DATABASE_USERNAME,
+  database: process.env.DATABASE_NAME,
+  password: process.env.DATABASE_PASSWORD,
+  host: process.env.DATABASE_HOST,
+  port: DATABASE_PORT,
   ssl: true,
   dialect: 'postgres',
   dialectOptions: {
