@@ -8,7 +8,7 @@ var _express = _interopRequireDefault(require("express"));
 
 var _routes = _interopRequireDefault(require("./routes"));
 
-var _connection = require("./database/connection");
+var _connection = _interopRequireDefault(require("./database/connection"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -18,6 +18,10 @@ app.use(_express["default"].json());
 app.use(_routes["default"]);
 app.listen(PORT, function () {
   console.log("App listening on port ".concat(PORT));
-  (0, _connection.connect)();
 });
+
+try {
+  (0, _connection["default"])();
+} catch (error) {}
+
 module.exports = app;

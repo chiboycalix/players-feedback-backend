@@ -1,19 +1,14 @@
-import Joi from 'joi'
+import JoiValidation from '../middleware/joi'
 
 class AuthController {
 
   static async SignUp(req, res) {
-
     const { username, email, password, avatar } = req.body;
-    const schema = {
-      email: Joi.string().email().required(),
-      username: Joi.string().required(),
-      password: Joi.string().required(),
-    };
+    const joiValidation = new JoiValidation(username, email, password, avatar);
 
-    const { error } = Joi.valid({ email, username, password }, schema);
-
-    console.log(error)
+    const { error, value } = joiValidation
+      .signupSchema({ username, email, password, avatar })
+      .validate({ username, email, password, avatar });
 
     res.send({ username, email, password, avatar })
   }

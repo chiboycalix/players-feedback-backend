@@ -29,7 +29,7 @@ let cloud_config = {
   database: process.env.DATABASE_NAME,
   password: process.env.DATABASE_PASSWORD,
   host: process.env.DATABASE_HOST,
-  port: DATABASE_PORT,
+  port: process.env.DATABASE_PORT,
   ssl: true,
   dialect: 'postgres',
   dialectOptions: {
