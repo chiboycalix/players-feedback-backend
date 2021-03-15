@@ -1,6 +1,5 @@
 import Joi from 'joi';
 
-
 class JoiValidation {
   constructor(username, email, password, avatar) {
     this.username = username;
@@ -9,17 +8,14 @@ class JoiValidation {
     this.avatar = avatar;
   }
 
-
-  signupSchema = () => {
+  static signupSchema = () => {
     return Joi.object({
       username: Joi.string().min(3).max(15).required(),
       password: Joi.string().required(),
-      email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+      email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
       avatar: Joi.string()
-    })
-  }
-
+    });
+  };
 }
 
-export default JoiValidation;
+module.exports = JoiValidation

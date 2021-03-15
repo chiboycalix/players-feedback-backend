@@ -1,16 +1,17 @@
-import JoiValidation from '../middleware/joi'
+import JoiValidation from '../middleware/joi';
+import requestHandler from '../utils/requestHandler'
 
 class AuthController {
-
   static async SignUp(req, res) {
     const { username, email, password, avatar } = req.body;
-    const joiValidation = new JoiValidation(username, email, password, avatar);
 
-    const { error, value } = joiValidation
+    const { error, value } = JoiValidation
       .signupSchema({ username, email, password, avatar })
       .validate({ username, email, password, avatar });
 
-    res.send({ username, email, password, avatar })
+    requestHandler.validateJoi(error)
+
+    res.send({ username, email, password, avatar });
   }
 }
 
