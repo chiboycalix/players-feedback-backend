@@ -12,4 +12,4 @@ const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_
 	}
 })
 
-	(async () => await sequelize.sync({ alter: true }))
+	(async () => await sequelize.sync({ alter: true }))()
